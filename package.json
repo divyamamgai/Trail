@@ -1,0 +1,49 @@
+{
+  "name": "Trail",
+  "version": "1.0.0",
+  "description": "Plugin Description",
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divyamamgai/Trail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/divyamamgai/Trail/issues"
+  },
+  "author": {
+    "name": "Divya Mamgai",
+    "email": "divyamamgai21@gmail.com",
+    "url": "https://github.com/divyamamgai"
+  },
+  "homepage": "http://divyamamgai.github.io/Trail",
+  "contributors": [
+    {
+      "name": "Divya Mamgai",
+      "email": "divyamamgai21@gmail.com",
+      "url": "https://github.com/divyamamgai"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "latest",
+    "gsap": "latest"
+  },
+  "devDependencies": {
+    "jshint": "latest",
+    "fuse": "latest",
+    "uglify-js": "latest",
+    "rimraf": "latest"
+  },
+  "scripts": {
+    "lint": "jshint src/js",
+    "prebuild:js": "npm run lint",
+    "build:js": "fuse -i src/js/Trail.js -o dist/js/Trail.js",
+    "postbuild:js": "uglifyjs dist/js/Trail.js > dist/js/Trail.min.js -mc --comments",
+    "build": "npm run build:js",
+    "clean": "rimraf dist"
+  }
+}

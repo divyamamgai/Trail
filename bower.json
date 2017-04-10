@@ -1,0 +1,23 @@
+{
+  "name": "PluginName",
+  "license": "MIT",
+  "authors": [
+    "Divya Mamgai <divyamamgai21@gmail.com>"
+  ],
+  "description": "Plugin Description",
+  "homepage": "http://PluginName.com",
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "plugin"
+  ],
+  "main": "src/js/PluginName.js",
+  "dependencies": {
+    "jquery": ">=1.5.1"
+  },
+  "ignore": [
+    "npm-debug.log",
+    "bower_components",
+    "node_modules"
+  ]
+}

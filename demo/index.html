@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trail</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="dist/js/Trail.js"></script>
+</head>
+<body>
+<svg id="Circle" width="512" height="512" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path d="M50,100a50,50 0 1,0 100,0a50,50 0 1,0 -100,0" stroke="#000" stroke-width="5" fill="none"></path>
+    <path d="M37.5,75a37.5,37.5 0 1,0 75,0a37.5,37.5 0 1,0 -75,0" stroke="#222" stroke-width="5" fill="none"
+          transform="translate(25, 25)"></path>
+    <path d="M25,50a25,25 0 1,0 50,0a25,25 0 1,0 -50,0" stroke="#555" stroke-width="5" fill="none"
+          transform="translate(50, 50)"></path>
+    <path d="M12.5,25a12.5,12.5 0 1,0 25,0a12.5,12.5 0 1,0 -25,0" stroke="#777" stroke-width="5" fill="none"
+          transform="translate(75, 75)"></path>
+</svg>
+</body>
+<script type="text/javascript">
+    (function ($, d) {
+        $(function () {
+            var $svg = $('#Circle', d).Trail({
+                stagger: true,
+                staggerDelay: 0.1,
+                duration: 1,
+                ease: Power4.easeInOut,
+                onComplete: function () {
+                    $svg.GetTrail().reverse();
+                }
+            }, {
+                paused: true,
+                repeat: 2,
+                yoyo: true
+            });
+            $svg.GetTrail().play();
+        });
+    })(jQuery, document);
+</script>
+</html>
